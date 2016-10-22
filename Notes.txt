@@ -1,0 +1,67 @@
+Notes
+
+Notes
+
+tab.url = https://it36.tribals.it/game.php?village=4745&screen=overview
+
+reports.attacks =
+https://it36.tribals.it/game.php?village=4745&screen=report&mode=attack
+
+reports.attacksWithPagination = https://it36.tribals.it/game.php?village=4745&screen=report&mode=attack&from=12 ( multipli di 12 )
+
+reports.attacks.report = https://it36.tribals.it/game.php?village=4745&screen=report&mode=attack&group_id=0&view=2129440 ( id incrementale )
+
+player = https://it36.tribals.it/game.php?village=4745&screen=info_player&id=533699
+village = https://it36.tribals.it/game.php?village=4745&screen=info_village&id=3954
+
+Selectors:
+#attack_info_att_units
+#attack_info_def_units //not for now
+#attack_results
+#attack_info_def .village_anchor.contexted //player info
+#content_value .vis .small.grey ( .parent() ) //localized date
+
+
+- Report object: 
+/*{
+	"villageId": "4355",
+	"playerId": "464534",
+	"palyerName": "M--M", 
+	"villageName" : "Villaggio di M--M",
+	"combatTime": "ott 14,2016 19:15:56:442",
+	"destination": "Villaggio di M--M (435|484) C44"
+	"coordinates": "456|467",
+	"reportIcon": "green",
+	"villageLink": "/game.php?village=4745&screen=info_village&id=4947",
+	"playerLink": "/game.php?village=4745&screen=info_player&id=713542",
+	"resources" :[
+	"spied":{
+		"wood": 1000,
+		"stone": 2000,
+		"iron": 2200,
+		"total": 5200
+	},
+	"haul":{
+		"wood": 100,
+		"stone": 200,
+		"iron": 220,
+		"total": 520
+	}]
+}*/
+
+
+- Table using: https://datatables.net/
+- Dates using: https://github.com/jquery/globalize
+
+
+How to show the storage content (usable directrly in dev console):
+LOCAL: chrome.storage.local.get(null, function(items){ console.log(items)})
+SYNC: chrome.storage.sync.get(null, function(items){ console.log(items)})
+
+How to clear the storage ( also from console ):
+chrome.storage.local.clear()
+chrome.storage.sync.clear()
+
+Size information:
+chrome.storage.local.getBytesInUse(null, function(bytes){ console.log(bytes)})
+chrome.storage.sync.getBytesInUse(null, function(bytes){ console.log(bytes)})

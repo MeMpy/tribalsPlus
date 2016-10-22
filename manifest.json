@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+
+  "name": "Tribald Plus",
+  "description": "Extension for tribals wars",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "/resources/knight.png",
+    "default_popup": "html/popup.html"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://it36.tribals.it/game.php?village=4745&screen=report&mode=all&group_id=0&view=*","https://it36.tribals.it/game.php?village=4745&screen=report&mode=attack&group_id=0&view=*"],
+      "js": [ "lib/jquery.js","scripts/contentscript_report.js"]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "lib/jquery.js",     
+      "scripts/eventPage.js"
+    ],
+    "persistent": false
+  }
+}

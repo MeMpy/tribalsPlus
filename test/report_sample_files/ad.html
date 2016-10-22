@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- saved from url=(0146)https://tpc.googlesyndication.com/sadbundle/8579817207526425728/ad.html?csp=er3#t=11426960461015420863&p=https%3A%2F%2Fgoogleads.g.doubleclick.net -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./exitapi-impl.js.download" type="text/javascript"></script><script src="./addata.js.download" type="text/javascript"></script><meta content="width=160,height=600" name="ad.size"><title>ad160x600</title><style>
+            html,body,div,section,p,img{margin:0;padding:0;}
+            .wrap{width:160px;height:600px;overflow:hidden;background:url(images/bg.jpg) no-repeat;position:relative;}
+            .snow img {display:none;position: absolute;}
+            .snow img.active{display:block;}
+            .snow{position:relative;top:0;left:0;}
+            .play{position:absolute;bottom:0;left:50%;margin-left:-70.5px;}
+          </style><script type="text/javascript" src="./JcB8v8_JdKtIhZ9y6LIjdAD-EV-EzPAX1QHCbClfXjk.js.download"></script></head><body onclick="ExitApi.exit();" style="cursor:pointer">
+  
+      
+          
+          
+          
+      
+      <a href="https://tpc.googlesyndication.com/sadbundle/8579817207526425728/ad.html?csp=er3">
+          <div class="wrap">
+            <div class="snow" id="bomb">
+              <img alt="" src="./snow1.png" class="">
+              <img alt="" src="./snow2.png" class="active">
+              <img alt="" src="./snow3.png" class="">
+              <img alt="" src="./snow4.png" class="">
+            </div>
+            <div class="play"><img alt="" src="./plau.png"></div>
+          </div>
+      </a>
+          <script type="text/javascript">  
+			   var bomb = document.getElementById('bomb');
+				var img = bomb.getElementsByTagName('img');
+				var num = 0;
+				var end = 0;
+				function start(){
+				  clearTimeout(a);
+				  var a = setTimeout(changeImg,300);
+				}
+				function changeImg(){
+				  for(var i = 0; i<img.length; i++){
+					var index = i;
+					img[i].className = "";
+				  }
+				  if(num == img.length-1){
+					  num = 0;
+					  end++;
+					  // if(end > 0)
+					  // {
+					  //   return;
+					  // }
+				  }else{
+					  num+=1;
+				  } 
+				  img[num].className="active";
+				  start();
+				}
+				setTimeout(start,100);
+			</script>
+      
+  
+</body></html>
