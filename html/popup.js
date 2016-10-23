@@ -1,8 +1,7 @@
 $(document).ready(function(){
-  //TODO fetch dinamically
-	var baseUrl = 'https://it36.tribals.it';
+
 	$('#report_table').on('click', 'a', function(){
-		 chrome.tabs.create({url: baseUrl + $(this).attr('href')});
+		 chrome.tabs.create({url: $(this).attr('href')});
 		 return false;
 	});
 
@@ -42,9 +41,9 @@ $(document).ready(function(){
           render: buildResources
         },
         { 
-          data: 'villageLink',
-          title: 'Attack',
-          render: buildLink 
+          data: 'actions',
+          title: 'Actions',
+          render: renderActions 
         }
     ]
     });    
@@ -52,8 +51,16 @@ $(document).ready(function(){
 
 })
 
-function buildLink( data, type, row ) {
-    return '<a href="'+data+'">'+ row.destination +'</a>';
+function renderActions(data, type, row) {
+  var attackLink = buildLink(data.attack, 'Attack')+'<br/>';
+  var sendResourcesLink = buildLink(data.sendResources, 'Send resources')+'<br/>';
+  var mapLink = buildLink(data.targetMap, 'Show on map')+'<br/>';
+
+  return attackLink+sendResourcesLink+mapLink;
+}
+
+function buildLink( link, text ) {
+    return '<a href="'+link+'">'+ text +'</a>';
 }
 
 function buildImage ( data, type, row){
