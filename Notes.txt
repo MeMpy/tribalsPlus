@@ -65,3 +65,6 @@ chrome.storage.sync.clear()
 Size information:
 chrome.storage.local.getBytesInUse(null, function(bytes){ console.log(bytes)})
 chrome.storage.sync.getBytesInUse(null, function(bytes){ console.log(bytes)})
+
+Report Object in Chrome Console
+reportObj = $('#content_value .report_ReportAttack').parents('table.vis:first')

@@ -14,7 +14,7 @@
   ],
   "content_scripts": [
     {
-      "matches": ["https://it36.tribals.it/game.php?village=4745&screen=report&mode=all&group_id=0&view=*","https://it36.tribals.it/game.php?village=4745&screen=report&mode=attack&group_id=0&view=*"],
+      "matches": ["https://it36.tribals.it/game.php?village=*&screen=report&mode=all&group_id=0&view=*","https://it36.tribals.it/game.php?village=*&screen=report&mode=attack&group_id=0&view=*"],
       "js": [ "lib/jquery.js","scripts/contentscript_report.js"]
     }
   ],
