@@ -4,7 +4,8 @@ chrome.runtime.onMessage.addListener(
     var report = $.parseHTML(request.table)[1];
 
     var reportObj = {};
-    //TODO add report id -> Can be null!!!    
+    //TODO add report id -> Can be null!!! 
+    //TODO add report link!   
     reportObj.villageLink = $(report).find('#attack_info_def .village_anchor a:first').attr("href");
     reportObj.villageId = $(report).find('#attack_info_def .village_anchor').attr('data-id');
     reportObj.combatTime = getDate($(report).find('tr:eq(1)').find('td:last').text().trim());
@@ -56,9 +57,9 @@ function getResources(resources) {
 	var stoneStr = $(resources).find('.stone').parent().text().trim();
 	var ironStr = $(resources).find('.iron').parent().text().trim();
 
-	var wood = !Number.parseInt(woodStr) ? 0: Number.parseInt(woodStr);
-	var stone = !Number.parseInt(stoneStr) ? 0: Number.parseInt(stoneStr);
-	var iron = !Number.parseInt(ironStr) ? 0: Number.parseInt(ironStr);
+	var wood = parseNumber(woodStr);
+	var stone = parseNumber(stoneStr);
+	var iron = parseNumber(ironStr);
 	var total = wood + stone + iron;
 
 	var result = {
@@ -71,6 +72,12 @@ function getResources(resources) {
 	return result;
 }
 
+function parseNumber(numberStr){
+	if(!numberStr ||  !Number.parseInt(numberStr))
+		return 0;
+	
+	return parseInt(numberStr.replace('.',''));
+}
 function getDate(localizedDate){
 	if(!localizedDate)
 		return null;
