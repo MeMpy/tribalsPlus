@@ -139,7 +139,7 @@ function getDate(localizedDate){
 	const italianMonths = ["gen", "feb", "mar", "apr", "mag", "giu", "lug", "ago", "set", "ott", "nov", "dic"]
 
 	dateArray = localizedDate.split(' ');
-	dateArray[0] = italianMonths.indexOf(dateArray[0])
+	dateArray[0] = italianMonths.indexOf(dateArray[0])+1
 
 	aDate = new Date(Date.parse(dateArray.join(' '))); 
 	return aDate.toLocaleString();

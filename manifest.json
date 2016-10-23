@@ -7,7 +7,7 @@
 
   "browser_action": {
     "default_icon": "/resources/knight.png",
-    "default_popup": "html/popup.html"
+    "default_popup": "html/reportsTable.html"
   },
   "permissions": [
     "storage"

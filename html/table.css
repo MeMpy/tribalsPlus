@@ -23,6 +23,23 @@ span.resource{
 	float: left;
 }
 
+#report_table tbody tr.resourceRow{
+	background-color: transparent;
+}
+#report_table.dataTable.hover tbody tr.resourceRow:hover, #report_table.dataTable.display tbody tr.resourceRow:hover {
+	background-color: transparent;
+}
+
+
+
+a.tribals{
+    font-weight: 700;
+    text-decoration: none;
+    color: #603000;
+}
+
+
+
 body {
 	background-color: #bfae95;
 }
@@ -31,6 +48,7 @@ body {
 	background-color: #c9a969;
 	width: 1000px;	
 }
+
 
 #report_table tbody tr {
     background-color: #ebd6ab;
