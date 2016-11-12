@@ -146,7 +146,7 @@ function getDate(localizedDate){
 	dateArray[0] = italianMonths.indexOf(dateArray[0])+1
 
 	aDate = new Date(Date.parse(dateArray.join(' '))); 
-	return aDate.toLocaleString();
+	return aDate.toJSON();
 }
 
 function reportsEquality(report){
